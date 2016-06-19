@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by Ngo Hado on 18-Jun-16.
  */
 public class ExerciseViewHolder extends RecyclerView.ViewHolder {
-    public static int EXCERCISE_VIEW = R.layout.load_more;
+    public static int EXERCISE_VIEW = R.layout.item_exercise;
 
     @Bind(R.id.img_number)
     public ImageView imgExercise;
