@@ -1,14 +1,14 @@
 package com.hado.myexample.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 
 /**
  * Created by Ngo Hado on 17-Jun-16.
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

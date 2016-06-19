@@ -3,8 +3,10 @@ package com.hado.myexample.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.hado.myexample.adapter.callback.RecyclerViewItemClickListener;
 import com.hado.myexample.adapter.model.Exercise;
 import com.hado.myexample.adapter.viewholder.ExerciseViewHolder;
 
@@ -20,8 +22,11 @@ public class ExerciseAdapter extends BaseAdapter<Exercise> {
         MORE
     }
 
-    public ExerciseAdapter(Context context, List<Exercise> initData) {
+    RecyclerViewItemClickListener<Exercise> callBack;
+
+    public ExerciseAdapter(Context context, List<Exercise> initData, RecyclerViewItemClickListener<Exercise> callBack) {
         super(context, initData);
+        this.callBack = callBack;
     }
 
     @Override
@@ -30,29 +35,35 @@ public class ExerciseAdapter extends BaseAdapter<Exercise> {
     }
 
     @Override
-    protected void onActualBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    protected void onActualBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         Type positionType = Type.values()[getDefaultItemViewType(position)];
         switch (positionType) {
             case NORMAL:
                 ((ExerciseViewHolder) holder).setUpWith(dataSet.get(position));
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        callBack.onClick(position, dataSet.get(position));
+                    }
+                });
                 break;
             case MORE:
                 break;
             default:
-                ((ExerciseViewHolder) holder).setUpWith(dataSet.get(position));
         }
     }
 
     @Override
     protected RecyclerView.ViewHolder onActualCreateViewHolder(ViewGroup parent, int viewType) {
         Type type = Type.values()[viewType];
+        View view;
         switch (type) {
             case NORMAL:
-                return new ExerciseViewHolder(LayoutInflater.from(context).inflate(ExerciseViewHolder.EXCERCISE_VIEW, parent, true));
+                view = LayoutInflater.from(context).inflate(ExerciseViewHolder.EXERCISE_VIEW, parent, false);
+                return new ExerciseViewHolder(view);
             case MORE:
                 break;
             default:
-                return new ExerciseViewHolder(LayoutInflater.from(context).inflate(ExerciseViewHolder.EXCERCISE_VIEW, parent, true));
         }
         return null;
     }
