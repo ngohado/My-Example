@@ -10,6 +10,7 @@ import com.hado.myexample.adapter.ExerciseAdapter;
 import com.hado.myexample.adapter.callback.RecyclerViewItemClickListener;
 import com.hado.myexample.adapter.model.Exercise;
 import com.hado.myexample.bluetooth.BluetoothActivity;
+import com.hado.myexample.notification.NotificationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
 
 
     public enum ExerciseEnum {
-        BLUETOOTH
+        BLUETOOTH,
+        NOTIFICATION
     }
 
     @Override
@@ -40,7 +42,9 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
             case BLUETOOTH:
                 openExercise(BluetoothActivity.class);
                 break;
-
+            case NOTIFICATION:
+                openExercise(NotificationActivity.class);
+                break;
             default:
         }
     }
@@ -66,7 +70,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
     private void addExercise() {
         exerciseList = new ArrayList<>();
         exerciseList.add(new Exercise(R.mipmap.bluetooth, "Bluetooth", "19-Jun-2016", ExerciseEnum.BLUETOOTH));
-        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
+        exerciseList.add(new Exercise(R.mipmap.notification, "Notification", "19-Jun-2016", ExerciseEnum.NOTIFICATION));
         exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
         exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
     }
