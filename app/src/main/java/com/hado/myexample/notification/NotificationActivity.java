@@ -1,20 +1,21 @@
 package com.hado.myexample.notification;
 
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 
 import com.hado.myexample.R;
 import com.hado.myexample.activity.BaseActivity;
 import com.hado.myexample.activity.MainActivity;
-import com.hado.myexample.util.DebugLog;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.OnClick;
 
-public class NotificationActivity extends BaseActivity implements MyNotificationBuilder.OnClickComponentNotification {
+public class NotificationActivity extends BaseActivity implements NotificationHelper.OnClickComponentNotification {
 
     @Override
     protected void initData() {
@@ -36,18 +37,24 @@ public class NotificationActivity extends BaseActivity implements MyNotification
         Map<Integer, String> actions = new HashMap<>();
         actions.put(R.id.img_number, "image");
         actions.put(R.id.tv_exercise_name, "name");
-        actions.put(R.id.img_number, "description");
+        actions.put(R.id.tv_exercise_description, "description");
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        MyNotificationBuilder.getInstance(getApplicationContext(), R.layout.item_exercise).setSmallIcon(R.mipmap.ic_launcher)
-                .setOnClick(actions, this)
-                .setCancelable(false)
-                .setContentIntent(intent, PendingIntent.FLAG_UPDATE_CURRENT).show();
+        NotificationHelper.getInstance(getApplicationContext()).setSmallIcon(R.mipmap.ic_launcher)
+                .setTitle("Hello there")
+                .setContent("My name is Hado")
+                .setVibrate(false)
+                .setSound(false, R.raw.notification_sound)
+                .setLedLight(0xff00ff00)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.notification))
+                .setCancelable(true)
+                .setContentIntent(intent, PendingIntent.FLAG_UPDATE_CURRENT).show(1234);
     }
 
     @Override
-    public void onClicked(Context context, Intent intent, String action) {
-        DebugLog.i(action);
+    public void onClicked(Context context, Intent intent, Notification notification, String action) {
+        notification.contentView.setImageViewResource(R.id.img_number, R.mipmap.bluetooth);
+        NotificationHelper.getInstance(getApplicationContext()).updateNotification(notification, 1234);
     }
 }
