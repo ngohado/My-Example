@@ -208,7 +208,7 @@ public class NotificationHelper {
         return notificationHelper;
     }
 
-    protected static int generateUniqueId() {
+    private static int generateUniqueId() {
         String uniqueNumber = String.format("%d%d%d%d", Calendar.getInstance().get(Calendar.DAY_OF_WEEK), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.MILLISECOND));
         return Integer.parseInt(uniqueNumber);
     }
