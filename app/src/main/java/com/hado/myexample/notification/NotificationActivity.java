@@ -28,9 +28,7 @@ public class NotificationActivity extends BaseActivity implements NotificationHe
 
     @OnClick(R.id.btn_normal)
     public void buttonNormalClicked() {
-//        NotificationHelper.getInstance(getApplicationContext()).setTitle("Hello there!")
-//                .setContent("My name is Hado")
-//                .setSmallIcon(R.draw)
+
     }
 
     @OnClick(R.id.btn_effect)

@@ -28,7 +28,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
 
     public enum ExerciseEnum {
         BLUETOOTH,
-        NOTIFICATION
+        NOTIFICATION,
+        MEMORY_LEAK
     }
 
     @Override
@@ -44,6 +45,9 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
                 break;
             case NOTIFICATION:
                 openExercise(NotificationActivity.class);
+                break;
+            case MEMORY_LEAK:
+                openExercise(LocationUpdateActivity.class);
                 break;
             default:
         }
@@ -71,7 +75,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList = new ArrayList<>();
         exerciseList.add(new Exercise(R.mipmap.bluetooth, "Bluetooth", "19-Jun-2016", ExerciseEnum.BLUETOOTH));
         exerciseList.add(new Exercise(R.mipmap.notification, "Notification", "19-Jun-2016", ExerciseEnum.NOTIFICATION));
-        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
+        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Memory Leak", "04-Jul-2016", ExerciseEnum.MEMORY_LEAK));
         exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
     }
 

@@ -152,6 +152,13 @@ public class NotificationHelper {
         return notificationHelper;
     }
 
+    public NotificationHelper setViewVisibility(int id, int visibility) {
+        if (remoteViews != null) {
+            remoteViews.setViewVisibility(id, visibility);
+        }
+        return notificationHelper;
+    }
+
     public NotificationHelper setImageView(int id, int resource) {
         if (remoteViews != null) {
             remoteViews.setImageViewResource(id, resource);
@@ -208,6 +215,11 @@ public class NotificationHelper {
         return notificationHelper;
     }
 
+    public NotificationHelper setFlags(int flag) {
+        builder.build().flags |= flag;
+        return notificationHelper;
+    }
+
     private static int generateUniqueId() {
         String uniqueNumber = String.format("%d%d%d%d", Calendar.getInstance().get(Calendar.DAY_OF_WEEK), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.MILLISECOND));
         return Integer.parseInt(uniqueNumber);
@@ -239,6 +251,10 @@ public class NotificationHelper {
 
     public void updateNotification(Service service, Notification notification, int notificationId) {
         service.startForeground(notificationId, notification);
+    }
+
+    public Notification build() {
+        return builder.build();
     }
 
     private void recycleBitmap(Bitmap bitmap) {
