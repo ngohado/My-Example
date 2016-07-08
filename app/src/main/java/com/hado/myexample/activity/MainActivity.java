@@ -10,6 +10,7 @@ import com.hado.myexample.adapter.ExerciseAdapter;
 import com.hado.myexample.adapter.callback.RecyclerViewItemClickListener;
 import com.hado.myexample.adapter.model.Exercise;
 import com.hado.myexample.bluetooth.BluetoothActivity;
+import com.hado.myexample.instagram.InstagramActivity;
 import com.hado.myexample.notification.NotificationActivity;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
     public enum ExerciseEnum {
         BLUETOOTH,
         NOTIFICATION,
-        MEMORY_LEAK
+        INSTAGRAM
     }
 
     @Override
@@ -46,8 +47,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
             case NOTIFICATION:
                 openExercise(NotificationActivity.class);
                 break;
-            case MEMORY_LEAK:
-                openExercise(LocationUpdateActivity.class);
+            case INSTAGRAM:
+                openExercise(InstagramActivity.class);
                 break;
             default:
         }
@@ -75,7 +76,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList = new ArrayList<>();
         exerciseList.add(new Exercise(R.mipmap.bluetooth, "Bluetooth", "19-Jun-2016", ExerciseEnum.BLUETOOTH));
         exerciseList.add(new Exercise(R.mipmap.notification, "Notification", "19-Jun-2016", ExerciseEnum.NOTIFICATION));
-        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Memory Leak", "04-Jul-2016", ExerciseEnum.MEMORY_LEAK));
+        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Instagram", "07-Jul-2016", ExerciseEnum.INSTAGRAM));
         exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
     }
 
