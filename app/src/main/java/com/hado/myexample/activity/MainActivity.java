@@ -12,6 +12,7 @@ import com.hado.myexample.adapter.model.Exercise;
 import com.hado.myexample.bluetooth.BluetoothActivity;
 import com.hado.myexample.instagram.InstagramActivity;
 import com.hado.myexample.notification.NotificationActivity;
+import com.hado.myexample.pagertransformer.PagerTransformerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
     public enum ExerciseEnum {
         BLUETOOTH,
         NOTIFICATION,
-        INSTAGRAM
+        INSTAGRAM,
+        PAGER_TRANSFORMER
     }
 
     @Override
@@ -50,6 +52,10 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
             case INSTAGRAM:
                 openExercise(InstagramActivity.class);
                 break;
+            case PAGER_TRANSFORMER:
+                openExercise(PagerTransformerActivity.class);
+                break;
+
             default:
         }
     }
@@ -76,8 +82,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList = new ArrayList<>();
         exerciseList.add(new Exercise(R.mipmap.bluetooth, "Bluetooth", "19-Jun-2016", ExerciseEnum.BLUETOOTH));
         exerciseList.add(new Exercise(R.mipmap.notification, "Notification", "19-Jun-2016", ExerciseEnum.NOTIFICATION));
-        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Instagram", "07-Jul-2016", ExerciseEnum.INSTAGRAM));
-        exerciseList.add(new Exercise(R.mipmap.ic_launcher, "Exercise 1", "Nothing to show"));
+        exerciseList.add(new Exercise(R.mipmap.instagram, "Instagram", "07-Jul-2016", ExerciseEnum.INSTAGRAM));
+        exerciseList.add(new Exercise(R.mipmap.transformers, "Pager Transformer", "07-Jul-2016", ExerciseEnum.PAGER_TRANSFORMER));
     }
 
     @Override
