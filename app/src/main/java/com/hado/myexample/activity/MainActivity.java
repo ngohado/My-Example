@@ -13,6 +13,7 @@ import com.hado.myexample.bluetooth.BluetoothActivity;
 import com.hado.myexample.instagram.InstagramActivity;
 import com.hado.myexample.notification.NotificationActivity;
 import com.hado.myexample.pagertransformer.PagerTransformerActivity;
+import com.hado.myexample.realm.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         BLUETOOTH,
         NOTIFICATION,
         INSTAGRAM,
-        PAGER_TRANSFORMER
+        PAGER_TRANSFORMER,
+        REALM
     }
 
     @Override
@@ -55,7 +57,9 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
             case PAGER_TRANSFORMER:
                 openExercise(PagerTransformerActivity.class);
                 break;
-
+            case REALM:
+                openExercise(LoginActivity.class);
+                break;
             default:
         }
     }
@@ -83,7 +87,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList.add(new Exercise(R.mipmap.bluetooth, "Bluetooth", "19-Jun-2016", ExerciseEnum.BLUETOOTH));
         exerciseList.add(new Exercise(R.mipmap.notification, "Notification", "19-Jun-2016", ExerciseEnum.NOTIFICATION));
         exerciseList.add(new Exercise(R.mipmap.instagram, "Instagram", "07-Jul-2016", ExerciseEnum.INSTAGRAM));
-        exerciseList.add(new Exercise(R.mipmap.transformers, "Pager Transformer", "07-Jul-2016", ExerciseEnum.PAGER_TRANSFORMER));
+        exerciseList.add(new Exercise(R.mipmap.transformers, "Pager Transformer", "08-Jul-2016", ExerciseEnum.PAGER_TRANSFORMER));
+        exerciseList.add(new Exercise(R.mipmap.realm, "Reaml Login", "10-Jul-2016", ExerciseEnum.REALM));
     }
 
     @Override
