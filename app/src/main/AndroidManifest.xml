@@ -10,12 +10,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".MyApplication">
+        android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +26,12 @@
         <activity android:name=".bluetooth.BluetoothActivity" />
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".instagram.InstagramActivity" />
-        <activity android:name=".pagertransformer.PagerTransformerActivity"></activity>
-        <activity android:name=".realm.LoginActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
+        <activity android:name=".pagertransformer.PagerTransformerActivity" />
+        <activity
+            android:name=".realm.LoginActivity"
+            android:theme="@style/LoginTheme"></activity>
+        <activity android:name=".musicplayer.MusicActivity"></activity>
+        <service android:name=".musicplayer.MusicService"/>
     </application>
 
 </manifest>
