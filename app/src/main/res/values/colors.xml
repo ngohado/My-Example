@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">@android:color/darker_gray</color>
     <color name="white">#80ffffff</color>
+
+    <color name="tab_1">@android:color/holo_blue_bright</color>
+    <color name="tab_2">#f9b908</color>
+    <color name="tab_3">#58f908</color>
+    <color name="tab_4">#9908f9</color>
 </resources>

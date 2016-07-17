@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hado.myexample.musicplayer.TopTabsCustom
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tabs">
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_tab">
+        <RelativeLayout
+            android:id="@+id/layout_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_tab">
+
+            <RelativeLayout
+                android:id="@+id/tab_1"
+                android:layout_width="@dimen/width_tab"
+                android:layout_height="@dimen/height_tab"
+                android:background="@drawable/tab_1"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Tab 1"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tab_2"
+                android:layout_width="@dimen/width_tab"
+                android:layout_height="@dimen/height_tab_normal"
+                android:background="@drawable/tab_2"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/tab_1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Tab 2"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tab_3"
+                android:layout_width="@dimen/width_tab"
+                android:layout_height="@dimen/height_tab_normal"
+                android:background="@drawable/tab_3"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/tab_2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Tab 3"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tab_4"
+                android:layout_width="@dimen/width_tab"
+                android:layout_height="@dimen/height_tab_normal"
+                android:background="@drawable/tab_4"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/tab_3">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Tab 4"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_below="@+id/scrollView"/>
+</com.hado.myexample.musicplayer.TopTabsCustom>

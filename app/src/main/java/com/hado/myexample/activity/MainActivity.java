@@ -11,6 +11,7 @@ import com.hado.myexample.adapter.callback.RecyclerViewItemClickListener;
 import com.hado.myexample.adapter.model.Exercise;
 import com.hado.myexample.bluetooth.BluetoothActivity;
 import com.hado.myexample.instagram.InstagramActivity;
+import com.hado.myexample.musicplayer.MusicActivity;
 import com.hado.myexample.notification.NotificationActivity;
 import com.hado.myexample.pagertransformer.PagerTransformerActivity;
 import com.hado.myexample.realm.LoginActivity;
@@ -34,7 +35,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         NOTIFICATION,
         INSTAGRAM,
         PAGER_TRANSFORMER,
-        REALM
+        REALM,
+        MUSIC_PLAYER
     }
 
     @Override
@@ -60,6 +62,10 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
             case REALM:
                 openExercise(LoginActivity.class);
                 break;
+            case MUSIC_PLAYER:
+                openExercise(MusicActivity.class);
+                break;
+
             default:
         }
     }
@@ -89,6 +95,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList.add(new Exercise(R.mipmap.instagram, "Instagram", "07-Jul-2016", ExerciseEnum.INSTAGRAM));
         exerciseList.add(new Exercise(R.mipmap.transformers, "Pager Transformer", "08-Jul-2016", ExerciseEnum.PAGER_TRANSFORMER));
         exerciseList.add(new Exercise(R.mipmap.realm, "Reaml Login", "10-Jul-2016", ExerciseEnum.REALM));
+        exerciseList.add(new Exercise(R.mipmap.realm, "Music Player", "15-Jul-2016", ExerciseEnum.MUSIC_PLAYER));
     }
 
     @Override
