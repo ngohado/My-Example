@@ -27,9 +27,7 @@ public class RealmController {
 
     public List<AccountRealmModel> getAllAccounts() {
         try {
-            beginTransaction();
             List<AccountRealmModel> allAccounts = realm.where(AccountRealmModel.class).findAll();
-            commitTransaction();
             return allAccounts;
         } catch (Exception e) {
             return null;
