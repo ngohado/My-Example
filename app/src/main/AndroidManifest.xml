@@ -29,9 +29,12 @@
         <activity android:name=".pagertransformer.PagerTransformerActivity" />
         <activity
             android:name=".realm.LoginActivity"
-            android:theme="@style/LoginTheme"></activity>
-        <activity android:name=".musicplayer.MusicActivity"></activity>
-        <service android:name=".musicplayer.MusicService"/>
+            android:theme="@style/LoginTheme" />
+        <activity android:name=".musicplayer.MusicActivity" />
+
+        <service android:name=".musicplayer.MusicService" />
+
+        <activity android:name=".rxjava.RXJavaActivity"></activity>
     </application>
 
 </manifest>
