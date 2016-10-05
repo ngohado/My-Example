@@ -34,7 +34,9 @@
 
         <service android:name=".musicplayer.MusicService" />
 
-        <activity android:name=".rxjava.RXJavaActivity"></activity>
+        <activity android:name=".rxjava.RXJavaActivity" />
+        <activity android:name=".socketio.SocketActivity" />
+        <activity android:name=".terris.GameActivity"></activity>
     </application>
 
 </manifest>
