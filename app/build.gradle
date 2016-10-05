@@ -20,6 +20,14 @@ android {
             debuggable true
         }
     }
+    signingConfigs {
+        debug {
+            storeFile file("hadokeystore.jks")
+            storePassword '031889778'
+            keyAlias 'Hado'
+            keyPassword '031889778'
+        }
+    }
     tasks.whenTaskAdded { task ->
         if (task.name.equals("lint")) {
             task.enabled = false
@@ -37,4 +45,9 @@ dependencies {
     compile 'com.android.support:support-v4:23.4.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+    compile ('io.socket:socket.io-client:0.7.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+    compile 'com.google.code.gson:gson:2.4'
 }

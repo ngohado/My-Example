@@ -16,6 +16,8 @@ import com.hado.myexample.notification.NotificationActivity;
 import com.hado.myexample.pagertransformer.PagerTransformerActivity;
 import com.hado.myexample.realm.LoginActivity;
 import com.hado.myexample.rxjava.RXJavaActivity;
+import com.hado.myexample.socketio.SocketActivity;
+import com.hado.myexample.terris.GameActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +40,9 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         PAGER_TRANSFORMER,
         REALM,
         MUSIC_PLAYER,
-        RXJAVA
+        RXJAVA,
+        SOCKET,
+        GAME
     }
 
     @Override
@@ -69,6 +73,12 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
                 break;
             case RXJAVA:
                 openExercise(RXJavaActivity.class);
+                break;
+            case SOCKET:
+                openExercise(SocketActivity.class);
+                break;
+            case GAME:
+                openExercise(GameActivity.class);
                 break;
 
             default:
@@ -102,6 +112,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewItemClickL
         exerciseList.add(new Exercise(R.mipmap.realm, "Reaml Login", "10-Jul-2016", ExerciseEnum.REALM));
         exerciseList.add(new Exercise(R.mipmap.realm, "Music Player", "15-Jul-2016", ExerciseEnum.MUSIC_PLAYER));
         exerciseList.add(new Exercise(R.mipmap.rxjava, "RX Java", "11-Sep-2016", ExerciseEnum.RXJAVA));
+        exerciseList.add(new Exercise(R.mipmap.rxjava, "Socket IO", "14-Sep-2016", ExerciseEnum.SOCKET));
+        exerciseList.add(new Exercise(R.mipmap.rxjava, "GAME", "19-Sep-2016", ExerciseEnum.GAME));
     }
 
     @Override
